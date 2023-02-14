@@ -1,4 +1,10 @@
 
+const d = new Date().toLocaleDateString('en-US')
+const t = new Date().toLocaleTimeString('en-US')
+
+document.getElementById("pvm").innerText = "Date: " + d + " Time: " + t;
+
+
 function getProducts() {
 
     document.getElementById("taulukko").innerHTML = "<h4>Ladataan...</h4>"
@@ -14,7 +20,7 @@ fetch('http://localhost:3300/api/products')
 
   setTimeout(() => {
     x += `</tbody></table>`
-  document.getElementById("sisältö").innerHTML = x}
+  document.getElementById("taulukko").innerHTML = x}
   , 500 )
 
 }
